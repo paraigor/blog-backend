@@ -28,14 +28,14 @@
               <div class="card blog__slide text-center">
                 <div class="blog__slide__img">
                   {% if post.image_url %}
-                    <img class="card-img rounded-0" src="{{ post.image_url }}" alt="">
+                    <img class="card-img rounded-0" src="{{ post.image_url }}" alt="{{ post.title }} post image">
                   {% else %}
-                    <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="">
+                    <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="Post image stub">
                   {% endif %}
                 </div>
                 <div class="blog__slide__content">
                   <h3><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h3>
-                  <p>{{ post.published_at}}</p>
+                  <p>{{ post.published_at }}</p>
                 </div>
               </div>
             </div>
@@ -54,9 +54,9 @@
               <div class="single-recent-blog-post">
                 <div class="thumb">
                   {% if post.image_url %}
-                    <img class="img-fluid" src="{{ post.image_url }}" alt="">
+                    <img class="img-fluid" src="{{ post.image_url }}" alt="{{ post.title }} post image">
                   {% else %}
-                    <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
+                    <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Post image stub">
                   {% endif %}
                   <ul class="thumb-info" style="max-width: 550px;">
                     <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
@@ -72,7 +72,6 @@
               </div>
             {% endfor %}
             
-
             <div class="row">
               <div class="col-lg-12">
                 <nav class="blog-pagination justify-content-center d-flex">
@@ -112,7 +111,6 @@
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
               </div>
-
 
               <div class="single-sidebar-widget post-category-widget">
                 <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
